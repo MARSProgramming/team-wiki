@@ -1,8 +1,8 @@
 site_name: "Mountaineer Area Robotics Team 2614 Wiki"
 site_description: "Documentation for our team's FRC robot code, hardware, and setup guides."
-site_url: "https://mountaineerduke.github.io/team-wiki/"
-repo_url: "https://github.com/mountaineerduke/team-wiki"
-repo_name: "team-wiki"
+site_url: "https://marsprogramming.github.io/team-wiki/"
+repo_url: "https://github.com/MARSProgramming/team-wiki"
+repo_name: "MARSProgramming/team-wiki"
 theme:
   name: material
   logo: assets/logo.png
