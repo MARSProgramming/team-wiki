@@ -12,9 +12,25 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      # Checkout the repo
       - uses: actions/checkout@v4
+
+      # Set up Python
       - uses: actions/setup-python@v5
         with:
           python-version: 3.x
-      - run: pip install mkdocs-material
-      - run: mkdocs gh-deploy --force
+
+      # Install MkDocs and Material theme
+      - run: |
+          pip install mkdocs
+          pip install mkdocs-material
+
+      # Configure git for deploy
+      - run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      # Deploy site to gh-pages
+      - run: mkdocs gh-deploy --force --verbose
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
